@@ -119,7 +119,7 @@
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(201,147,58,0.15);
     border: 1px solid rgba(201,147,58,0.3);
-    color: var(--gold-light); font-size: 12px; font-weight: 600;
+    color: #f5c97a; font-size: 12px; font-weight: 600;
     letter-spacing: 1.5px; text-transform: uppercase;
     padding: 6px 16px; border-radius: 40px; margin-bottom: 2rem;
   }
@@ -213,15 +213,19 @@
   }
   .service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
   .service-card:hover::before { opacity: 1; }
+  .service-card-header {
+    display: flex; align-items: center; gap: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
   .service-icon {
-    width: 48px; height: 48px; border-radius: 10px;
+    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
     display: flex; align-items: center; justify-content: center;
-    font-size: 22px; margin-bottom: 1.25rem; color: var(--navy);
+    font-size: 18px; color: var(--navy);
   }
   .service-card h3 {
-    font-family: var(--font-display); font-size: 1.15rem;
-    margin-bottom: 0.5rem; color: var(--text-dark);
+    font-family: var(--font-display); font-size: 1.1rem;
+    line-height: 1.2; color: var(--text-dark);
   }
   .service-card p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
 
@@ -242,7 +246,7 @@
   }
   .biz-card:hover {
     border-color: var(--gold);
-    box-shadow: 0 0 30px rgba(201,147,58,0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
     transform: translateY(-3px);
   }
   .biz-logo-circle {
@@ -322,17 +326,16 @@
   }
   .owner-photo-label {
     position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(13,27,46,0.92);
+    border: 1px solid rgba(201,147,58,0.25);
     border-radius: var(--radius-sm);
     padding: 1rem 1.25rem;
   }
   .owner-photo-label h4 {
-    font-family: var(--font-display); color: var(--white);
+    font-family: var(--font-display); color: #ffffff;
     font-size: 1.1rem; margin-bottom: 2px;
   }
-  .owner-photo-label p { font-size: 12px; color: var(--gold-light); }
+  .owner-photo-label p { font-size: 12px; color: #f5c97a; }
   .owner-accent-box {
     position: absolute; right: -20px; top: 20px;
     width: 80px; height: 80px;
@@ -355,7 +358,7 @@
     background: var(--gold); margin-top: 6px; flex-shrink: 0;
     box-shadow: 0 0 0 3px rgba(201,147,58,0.2);
   }
-  .tl-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; color: var(--text-dark); }
+  .tl-text h3 { font-size: 14px; font-weight: 600; margin-bottom: 2px; color: var(--text-dark); }
   .tl-text p { font-size: 13px; color: var(--text-mid); }
 
   /* === INQUIRY FORM === */
@@ -377,7 +380,7 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 18px; flex-shrink: 0;
   }
-  .contact-item h4 { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 1px; }
+  .contact-item h3 { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 1px; }
   .contact-item p { font-size: 14.5px; color: var(--white); font-weight: 500; }
   .inquiry-form {
     background: rgba(255,255,255,0.05);
@@ -461,6 +464,7 @@
     font-size: 12px; color: rgba(255,255,255,0.25);
     width: 100%; text-align: center; margin-top: 1.5rem;
     padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05);
+    max-width: 65ch; margin-left: auto; margin-right: auto;
   }
 
   /* === MOBILE === */
@@ -547,33 +551,45 @@
     <p class="section-lead">Delivering end-to-end solutions in technology consulting, business development, and operational support.</p>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">💼</div>
-        <h3>Business Consultancy</h3>
+        <div class="service-card-header">
+          <div class="service-icon">💼</div>
+          <h3>Business Consultancy</h3>
+        </div>
         <p>Strategic business advice, planning, and operational guidance to help organizations grow with confidence and clarity.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">⚙️</div>
-        <h3>Technical Services</h3>
+        <div class="service-card-header">
+          <div class="service-icon">⚙️</div>
+          <h3>Technical Services</h3>
+        </div>
         <p>IT infrastructure, systems integration, and technical support services tailored for modern business environments.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">📱</div>
-        <h3>Software & App Development</h3>
+        <div class="service-card-header">
+          <div class="service-icon">📱</div>
+          <h3>Software & App Development</h3>
+        </div>
         <p>Custom software, mobile apps, and web platforms built to solve real business problems efficiently and scalably.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🖨️</div>
-        <h3>Printing & Branding</h3>
+        <div class="service-card-header">
+          <div class="service-icon">🖨️</div>
+          <h3>Printing & Branding</h3>
+        </div>
         <p>High-quality printing solutions for marketing materials, corporate branding, and identity design through Joyo Imprints.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">📊</div>
-        <h3>Project Management</h3>
+        <div class="service-card-header">
+          <div class="service-icon">📊</div>
+          <h3>Project Management</h3>
+        </div>
         <p>End-to-end project planning and execution, ensuring milestones are met on time and within budget.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🤝</div>
-        <h3>Business Process Outsourcing</h3>
+        <div class="service-card-header">
+          <div class="service-icon">🤝</div>
+          <h3>Business Process Outsourcing</h3>
+        </div>
         <p>Streamline your operations by outsourcing non-core business functions to our experienced and reliable team.</p>
       </div>
     </div>
@@ -583,7 +599,7 @@
 <!-- BUSINESSES -->
 <section id="businesses">
   <div class="section-inner">
-    <span class="section-tag" style="color: var(--gold-light);">The Joyo Inc</span>
+    <span class="section-tag" style="color: var(--gold-light);">The Joyo Group</span>
     <h2 class="section-title light">Our Family of Businesses</h2>
     <p class="section-lead light">Beyond consultancy, the Joyo Group operates diverse ventures spanning technology, retail, food, and creative services.</p>
     <div class="biz-grid">
@@ -679,7 +695,7 @@
         </div>
       </div>
       <div class="project-card">
-        <div class="project-img" style="background: linear-gradient(135deg, #1a0a2e, #3a1a5e);">
+        <div class="project-img" style="background: linear-gradient(135deg, #0d1b2e, #1e3a5f);">
           <span>🏫</span>
         </div>
         <div class="project-body">
@@ -738,7 +754,7 @@
             <span class="tl-year">2014</span>
             <div class="tl-dot"></div>
             <div class="tl-text">
-              <h4>Company Founded</h4>
+              <h3>Company Founded</h3>
               <p>AC Joyo Consultancy registered and launched its first technical consulting engagements.</p>
             </div>
           </div>
@@ -746,7 +762,7 @@
             <span class="tl-year">2017</span>
             <div class="tl-dot"></div>
             <div class="tl-text">
-              <h4>Joyo Imprints Launched</h4>
+              <h3>Joyo Imprints Launched</h3>
               <p>Expanded into commercial printing services, serving corporate and institutional clients.</p>
             </div>
           </div>
@@ -754,7 +770,7 @@
             <span class="tl-year">2019</span>
             <div class="tl-dot"></div>
             <div class="tl-text">
-              <h4>AppGenStore & Joyo Tech</h4>
+              <h3>AppGenStore & Joyo Tech</h3>
               <p>Ventured into technology retail and digital product development, broadening the group's reach.</p>
             </div>
           </div>
@@ -762,7 +778,7 @@
             <span class="tl-year">2022</span>
             <div class="tl-dot"></div>
             <div class="tl-text">
-              <h4>Coffee Shop Opens</h4>
+              <h3>Coffee Shop Opens</h3>
               <p>The Joyo Coffee Shop opened its doors, completing the group's diverse portfolio of ventures.</p>
             </div>
           </div>
@@ -784,21 +800,21 @@
           <div class="contact-item">
             <div class="contact-icon">📍</div>
             <div>
-              <h4>Location</h4>
+              <h3>Location</h3>
               <p>Calabarzon, Philippines</p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">📧</div>
             <div>
-              <h4>Email Us</h4>
+              <h3>Email Us</h3>
               <p>info@acjoyo.com</p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
-              <h4>Call Us</h4>
+              <h3>Call Us</h3>
               <p>+63 (0) 900 000 0000</p>
             </div>
           </div>
